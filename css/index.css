@@ -1,0 +1,16 @@
+table, tr, td, th{
+    border: 1px solid;
+}
+table{
+    width: 50%;
+    text-align: center
+}
+
+form{
+    float: right;
+    width: 50%;
+}
+
+form input{ 
+    display: block;
+}

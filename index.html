@@ -2,89 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <style>
-    table, tr, td, th{
-        border: 1px solid;
-    }
-    table{
-        width: 50%;
-        text-align: center
-    }
-    
-    form{
-        float: right;
-        width: 50%;
-    }
-
-    form input{ 
-        display: block;
-    }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>Gols</th>
-            <th>Assistências</th>
-            <th>Finalizações</th>
-            <th>Passes errados</th>
-            <th>Impedimentos</th>
-            <th>Total de pontos</th>
-            <th>Classificação</th>
-        </tr>
-        <tr class="jogador">
-            <td class="nome">gabriel</td>
-            <td class="gols">2</td>
-            <td class="as">1</td>
-            <td class="fin">2</td>
-            <td class="passes">20</td>
-            <td class="imp">1</td>
-            <td class="pontos">0</td>
-            <td class="class">0</td>
-        </tr>
-        <tr class="jogador">
-            <td class="nome">João</td>
-            <td class="gols">1</td>
-            <td class="as">1</td>
-            <td class="fin">5</td>
-            <td class="passes">10</td>
-            <td class="imp">2</td>
-            <td class="pontos">0</td>
-            <td class="class">0</td>
-        </tr>
-    </table>
-    <form id="form">
+    
+    <div id="jogadorview"></div>
+
+    <form id="form" onsubmit="jogadorController.inputJogador(event)">
+        
         <h1>Cadastro de Jogadores</h1>
         <label for="nome">Nome</label>
-        <input type="text" id="nome">
+        <input type="text" id="nome" required>
 
         <label for="gols">Gols</label>
-        <input type="text" id="gols">
+        <input type="number" id="gols" required>
 
         <label for="">Assistências</label>
-        <input type="text" id="as">
+        <input type="number" id="as" required>
 
         <label for="fin">Finalizações</label>
-        <input type="text" id="fin">
+        <input type="number" id="fin" required>
 
         <label for="passes">Passes</label>
-        <input type="text" id="passes">
+        <input type="number" id="passes" required>
 
         <label for="imp">Impedimentos</label>
-        <input type="text" id="imp">
+        <input type="number" id="imp" required>
 
-        <button id="cadastrar">Cadastrar</button>
-    </form>
-    <input type="button" value="Calcular" id="calc">
-    <ul id="msg-erro"></ul>
+        <input type="submit" id="cadastrar" value="incluir">
 
+        <br>
+        <br>
 
-    <script src="./js/calc.js"></script>
-    <script src="./js/inserir.js"></script>
+        <input type="button" id="importar" value="importar jogadores">
+
+    
+    <script src="./js/app/models/Jogador.js"></script>
+    <script src="./js/app/controller/JogadorController.js"></script>
+    <script src="./js/app/models/ListaJogador.js"></script>
+    <script src="./js/app/views/Jogadorview.js"></script>
+    <script>
+        let jogadorController = new JogadorController();
+        
+    </script>
 
 </body>
 </html>

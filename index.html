@@ -11,6 +11,9 @@
     
     <div id="jogadorview"></div>
 
+    <input type="button" id="importar" value="importar jogadores">
+    <input type="button" id="remover" value="Limpar lista" onclick="jogadorController.limparLista()">
+
     <form id="form" onsubmit="jogadorController.inputJogador(event)">
         
         <h1>Cadastro de Jogadores</h1>
@@ -33,20 +36,20 @@
         <input type="number" id="imp" required>
 
         <input type="submit" id="cadastrar" value="incluir">
+      
+        <div id="msg"></div>
 
-        <br>
-        <br>
-
-        <input type="button" id="importar" value="importar jogadores">
-
-    
+    <script src="./js/app/views/View.js"></script>
     <script src="./js/app/models/Jogador.js"></script>
     <script src="./js/app/controller/JogadorController.js"></script>
     <script src="./js/app/models/ListaJogador.js"></script>
     <script src="./js/app/views/Jogadorview.js"></script>
+    <script src="./js/app/models/Mensagem.js"></script>
+    <script src="./js/app/views/Mensagemview.js"></script>
+    
+    
     <script>
         let jogadorController = new JogadorController();
-        
     </script>
 
 </body>

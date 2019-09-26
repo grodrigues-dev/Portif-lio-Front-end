@@ -1,8 +1,4 @@
-class Jogadorview{
-
-    constructor(elemento){
-        this._elemento = elemento;
-    }
+class Jogadorview extends View{
 
     _template(model){
         return `
@@ -67,7 +63,5 @@ class Jogadorview{
     `;
     }
 
-    update(model){
-        this._elemento.innerHTML = this._template(model);
-    }
+    
 }

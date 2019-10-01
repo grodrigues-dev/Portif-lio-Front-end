@@ -8,18 +8,16 @@ class JogadorController{
         this._finalizacoes = $('#fin'); 
         this._passes = $('#passes'); 
         this._imp = $('#imp')
+    
+        //Associa model e view
+        this._listaJogador =  new Bind(
+          new ListaJogador(), new Jogadorview($('#jogadorview')),
+          'addLista', 'limparLista');
 
-        
-        this._listaJogador = new ListaJogador(model => this._jogadorView.update(model));
-
-        //Seleciona a div onde será exibida a view de jogador
-        this._jogadorView = new Jogadorview($('#jogadorview'));
-        //Faz a primeira renderização da tabela
-        this._jogadorView.update(this._listaJogador);
-
-        this._mensagem = new Mensagem();
-        this._mensagemView = new Mensagemview($('#msg'))
-        this._mensagemView.update(this._mensagem);
+              
+        this._mensagem = new Bind(
+          new Mensagem(), new Mensagemview($('#msg')), 
+          'msg');        
     }
 
  //Faz o reset da tabela
@@ -36,7 +34,7 @@ class JogadorController{
     
     
     this._mensagem.msg = 'Jogador adicionado com sucesso';
-    this._mensagemView.update(this._mensagem);
+  
 
   
     document.querySelector('#form').reset();

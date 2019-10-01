@@ -1,13 +1,13 @@
 class ListaJogador{
 
-    constructor(trap){
+    constructor(){
         this._jogadores =[];
-        this._trap = trap;
+     
     }
 
     addLista(jogador){
         this._jogadores.push(jogador);
-        this._trap(this)
+       
     }
 
     get jogadores(){
@@ -16,6 +16,6 @@ class ListaJogador{
 
     limparLista(){
         this._jogadores = []
-        this._trap(this)
+        
     }
 }

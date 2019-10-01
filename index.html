@@ -11,9 +11,9 @@
     
     <div id="jogadorview"></div>
 
-    <input type="button" id="importar" value="importar jogadores">
+    <input type="button" onclick="jogadorController.importarJogadores()" id="importar" value="importar jogadores">
     <input type="button" id="remover" value="Limpar lista" onclick="jogadorController.limparLista()">
-
+    
     <form id="form" onsubmit="jogadorController.inputJogador(event)">
         
         <h1>Cadastro de Jogadores</h1>
@@ -47,9 +47,10 @@
     <script src="./js/app/models/Mensagem.js"></script>
     <script src="./js/app/views/Mensagemview.js"></script>
     <script src="./js/app/services/ProxyFactory.js"></script>
+    <script src="./js/app/services/Bind.js"></script>
     <script>
         let jogadorController = new JogadorController();
     </script>
-
+    <!-- teste -->
 </body>
 </html>

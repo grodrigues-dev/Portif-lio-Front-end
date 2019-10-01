@@ -41,6 +41,24 @@ class JogadorController{
     document.querySelector('#nome').focus();   
   }
 
+  importarJogadores(){
+    let xhr = new XMLHttpRequest(); 
+    xhr.open('GET', 'http://localhost:3001/jogadores'); 
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState == 4){ // Codigo ajax para requisição concluiida
+        if(xhr.status ==200){
+          JSON.parse(xhr.responseText).map(objeto => 
+            new Jogador(objeto.nome, objeto.gols, objeto.assistencias, 
+              objeto.finalizacoes,objeto.impedimentos, objeto.passes))
+              .forEach(jogador => this._listaJogador.addLista(jogador));                 
+        } else{
+          console.log("Erro ao obter os dados");
+        }
+      }
+    }
+    xhr.send(); 
+  }
+
 //instancia um objeto da classe jogador
 createJogador(){
     return new Jogador(

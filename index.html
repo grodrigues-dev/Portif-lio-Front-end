@@ -8,12 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="col-1"> 
     <div id="jogadorview"></div>
 
     <input type="button" onclick="jogadorController.importarJogadores()" id="importar" value="importar jogadores">
     <input type="button" id="remover" value="Limpar lista" onclick="jogadorController.limparLista()">
-    
+    </div>
+
+    <div class="col-2">
     <form id="form" onsubmit="jogadorController.inputJogador(event)">
         
         <h1>Cadastro de Jogadores</h1>
@@ -38,6 +40,7 @@
         <input type="submit" id="cadastrar" value="incluir">
       
         <div id="msg"></div>
+    </div>
 
     <script src="./js/app/views/View.js"></script>
     <script src="./js/app/models/Jogador.js"></script>
@@ -48,6 +51,8 @@
     <script src="./js/app/views/Mensagemview.js"></script>
     <script src="./js/app/services/ProxyFactory.js"></script>
     <script src="./js/app/services/Bind.js"></script>
+    <script src="./js/app/services/JogadorService.js"></script>
+    <script src="./js/app/services/HttpService.js"></script>
     <script>
         let jogadorController = new JogadorController();
     </script>

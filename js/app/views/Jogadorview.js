@@ -16,8 +16,9 @@ class Jogadorview extends View{
         </tr>       
         <thead> 
         <tbody>
-        </tbody>
+       
             ${model.jogadores.map(j=>{
+                console.log(j);
                return `
                 <tr>
                 <td>${j.nome}</td>
@@ -30,7 +31,8 @@ class Jogadorview extends View{
                 <td>${j.classificacao}</td>
                 </tr>
                ` 
-            }).join()}
+            }).join(' ')}
+            </tbody>
         <tfoot>
         <td colspan="7"> <strong>CLASSIFICAÇÃO GERAL</strong></td>
         <td>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexdb</title>
+</head>
+<body>
+    <script>
+        let connection; 
+        
+        let openRequest = indexedDB.open('Projeto-ES6', 3);
+
+        openRequest.onupgradeneeded = e => {
+            console.log("Criando o banco");
+            let getConnection = e.target.result;
+            if(getConnection.objectStoreNames.contains('jogadores')){
+                getConnection.deleteObjectStore('jogadores')
+            }
+            getConnection.createObjectStore('jogadores', {autoIncrement: true});
+        }
+
+        openRequest.onsuccess = e => {
+            console.log('Conexão');
+            connection = e.target.result
+     }
+        openRequest.onerror = e => console.log(e.target.error);
+
+        function add(){
+
+            let transaction = connection.transaction(['jogadores'], 'readwrite');
+            let store = transaction.objectStore('jogadores');
+            let jogador = new Jogador('Gabriel', 1,0,1,1,0);
+            let request = store.add(jogador);
+
+            request.onsuccess = e => console.log("jogadores adicionados com sucesso");
+            request.onerror = e =>console.log("erro durante a requisição");
+        }
+
+        
+        
+        function list(){
+            let transaction = connection.transaction(['jogadores'], 'readwrite');
+            let store = transaction.objectStore('jogadores');
+           
+            let jogadores = [];
+
+            let cursor = store.openCursor();
+            cursor.onsuccess = e =>{
+                let atual = e.target.result;
+                if(atual) {
+                    let dado = atual.value; 
+                    jogadores.push(new Jogador(dado._nome, dado._gols, dado._assistencias,
+                    dado._finalizacoes, dado._passes, dado._impedimentos)); 
+                    atual.continue(); 
+                } else {
+                    console.log(jogadores);
+                    
+                }
+            } 
+            cursor.onerror = e => {
+                console.log(e.target.error.name);
+                
+            }
+
+            
+        }
+    </script>
+    <script src="./js/app/models/Jogador.js"></script>
+</body>
+</html>

@@ -11,35 +11,35 @@
     <div class="col-1"> 
     <div id="jogadorview"></div>
 
-    <input type="button" onclick="jogadorController.importarJogadores()" id="importar" value="importar jogadores">
-    <input type="button" id="remover" value="Limpar lista" onclick="jogadorController.limparLista()">
+    <input type="button" class="button" onclick="jogadorController.importarJogadores()" id="importar" value="importar jogadores">
+    <input type="button" class="button" id="remover" value="Limpar lista" onclick="jogadorController.limparLista()">
     </div>
 
     <div class="col-2">
-    <form id="form" onsubmit="jogadorController.inputJogador(event)">
+    <form id="form" class="form" onsubmit="jogadorController.inputJogador(event)">
         
         <h1>Cadastro de Jogadores</h1>
         <label for="nome">Nome</label>
-        <input type="text" id="nome" required>
+        <input type="text" id="nome"  class="jogador"required>
 
         <label for="gols">Gols</label>
-        <input type="number" id="gols" required>
+        <input type="number" id="gols" class="jogador" required>
 
         <label for="">Assistências</label>
-        <input type="number" id="as" required>
+        <input type="number" id="as"  class="jogador"required>
 
         <label for="fin">Finalizações</label>
-        <input type="number" id="fin" required>
+        <input type="number" id="fin"  class="jogador"required>
 
         <label for="passes">Passes</label>
-        <input type="number" id="passes" required>
+        <input type="number" id="passes"  class="jogador"required>
 
         <label for="imp">Impedimentos</label>
-        <input type="number" id="imp" required>
+        <input type="number" id="imp"  class="jogador"required>
 
-        <input type="submit" id="cadastrar" value="incluir">
+        <input type="submit" class="button" id="cadastrar" value="incluir">
       
-        <div id="msg"></div>
+        <div id="msg" class="fadeOut"></div>
     </div>
 
     <script src="./js/app/views/View.js"></script>
@@ -53,6 +53,7 @@
     <script src="./js/app/services/Bind.js"></script>
     <script src="./js/app/services/JogadorService.js"></script>
     <script src="./js/app/services/HttpService.js"></script>
+    <script src="./js/app/services/ConnectionFactory.js"></script>
     <script>
         let jogadorController = new JogadorController();
     </script>

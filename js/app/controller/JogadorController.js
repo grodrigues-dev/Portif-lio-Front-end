@@ -35,7 +35,6 @@ class JogadorController {
           .catch(error =>this._mensagem.msg = error);
   }
 
-  
 
 
   //Faz o reset da tabela

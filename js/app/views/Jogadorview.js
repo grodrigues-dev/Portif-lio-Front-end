@@ -1,3 +1,4 @@
+
 class Jogadorview extends View{
 
     _template(model){

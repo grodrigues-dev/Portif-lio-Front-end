@@ -36,8 +36,6 @@ class JogadorService {
     })
 
   }
-
-  
     importarJogadoresHeroi(){
         return new Promise((resolve, reject)=> {
           this._http.get('http://localhost:3001/jogadoresHeroi')

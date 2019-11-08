@@ -1,27 +1,68 @@
-table, tr, td, th{
-    border: 1px solid;
-}
-table{
-    
-    text-align: center
+body{
+    display: flex;
+    font-family: Roboto
+
 }
 
+ td,th{
+    border: 1px solid;
+    padding: 10px;
+}
+
+
+tr{
+    height: 35px;
+    
+}
+
+th{
+    background: #CFCFCF
+}
+
+tr:hover {background-color: #f5f5f5;}
+
+table{
+    text-align: center;
+    border-collapse: collapse
+}
 
 form input{ 
     display: block;
-
 }
 
 .col-1{
-    width: 50%;
-    
+    width: 50%;  
 }
 
 .col-2{
     width: 30%;
-    
+    margin-left: 20%;   
 }
 
-body{
-    display: flex;
+.jogador{
+    width: 90%;
+    height: 30px;
+    margin: 10px 0;
+    }
+
+.button{
+    border: none;
+    padding: 10px;
+    border-radius: 5%;
+    font-family: Roboto;
+    color: #fff;
+    background-color: #363636;
+    margin-top: 5px;
+    font-size: 16px;
+    
+
 }
+
+.button:hover{
+    cursor: pointer;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;} 
+ } 

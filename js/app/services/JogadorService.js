@@ -14,7 +14,7 @@ class JogadorService {
             })
             .catch(erro => {
                 console.log(erro); 
-                reject("Não Foi possiovel adicionar os jogadores")
+                reject("Não Foi possível adicionar os jogadores")
 
           })
     })
@@ -30,7 +30,7 @@ class JogadorService {
             })
             .catch(erro => {
                 console.log(erro); 
-                reject("Não Foi possiovel adicionar os jogadores")
+                reject("Não Foi possível adicionar os jogadores")
 
           })
     })
@@ -46,7 +46,7 @@ class JogadorService {
             })
             .catch(erro => {
                 console.log(erro); 
-                reject("Não Foi possiovel adicionar os jogadores")
+                reject("Não Foi possível adicionar os jogadores")
 
           })
     })
